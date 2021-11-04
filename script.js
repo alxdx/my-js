@@ -8,6 +8,7 @@ function format(d){
 		'<td>'+d[9]+'</td>'+
 	'</tr>'+'</table>';
 }
+
 $(document).ready(function(){
 	var table = $('#table_id').DataTable({
 		columnDefs:[
