@@ -1,46 +1,30 @@
-function format(d){
-	return '<table class="mychild">'+
-	'<tr>'+'<td>Detalle de estatus:</td>'+
-		'<td>'+d[8]+'</td>'+
-	'</tr>'+
-	'<tr>'+
-		'<td>Estatus anterior:</td>'+
-		'<td>'+d[9]+'</td>'+
-	'</tr>'+'</table>';
-}
-
 $(document).ready(function(){
-	var table = $('#table_id').DataTable({
+	var table = $('#datatable').DataTable({
 		columnDefs:[
 			{
 				targets:[8,9],
-				visible:false,
 				searchable:false
 			}
 		],
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
 		searching:true,
 		paging:true,
+		pageLength:50,
+		lengthChange:false,
 		autoWidth:false,
 		info:true,
 		select:true,
 		scrollCollapse:true,
-		fixedHeader:false
+		fixedHeader:false,
+		responsive:true,
+		fixedHeader:true,
+		colReorder:{
+			order:[0,1,2,3,4,5,6,10,11,12,13,14,15,16,17,7,8,9]
+		},
+		rowGroup:false
 	});
-	// Add event listener for opening and closing details
-	$('#table_id tbody').on('click','tr', function () {
-		var tr = $(this).closest('tr');
-		var row = table.row( tr );
-		if ( row.child.isShown() ) {
-		// This row is already open - close it
-			row.child.hide();tr.removeClass('shown');
-		}else{
-		// Open this row
-			row.child( format(row.data()) ).show();
-			tr.addClass('shown');
-		}
-	});
-
-	$('tr > .descripcion').click(function(){
-		$(this).toggleClass('active');
-	});
+table.buttons().container()
+        .appendTo( '#datatable_wrapper .col-sm-6:eq(0)' );
 });
