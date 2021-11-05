@@ -53,16 +53,18 @@
     float: none;
   }
 }
-
 /*end header css*/
+
 .table-container{
 	padding: 5px;
 }
 
+/*for hover on table*/
 .table-hover>tbody>tr:hover {
     background-color: #d9edf7;
 }
 
+/*for color of headers*/
 .table>caption+thead>tr:first-child>td, 
 .table>caption+thead>tr:first-child>th, 
 .table>colgroup+thead>tr:first-child>td, 
@@ -70,10 +72,24 @@
 .table>thead:first-child>tr:first-child>td, 
 .table>thead:first-child>tr:first-child>th{
 	background-color: #c6dfe7;
-	border:  1px solid black;;
+	border:  1px solid #d9edf7;
 }
-
+/*for color of modal '+' table */
 table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before, 
 table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control:before{
-	background-color: yellow;
+	background-color: #006384;
 }
+/*to adjust headers height*/
+table.dataTable thead>tr>th.sorting_asc, 
+table.dataTable thead>tr>th.sorting_desc, 
+table.dataTable thead>tr>th.sorting, 
+table.dataTable thead>tr>td.sorting_asc, 
+table.dataTable thead>tr>td.sorting_desc, 
+table.dataTable thead>tr>td.sorting{
+  padding-right: 20 px;
+}
+
+.status, .consecutivo, .numparte, .cant, .sopmp, .proyecto{
+    text-align: center;
+}
+
