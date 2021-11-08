@@ -1,4 +1,6 @@
-
+body, .btn{
+  font-size:11px ;
+}
 /* Style the header with a grey background and some padding */
 .header {
   overflow: hidden;
@@ -24,12 +26,6 @@
   font-weight: bold;
 }
 
-/* Change the background color on mouse-over 
-.header a:hover {
-  background-color: #ddd;
-  color: black;
-}
-*/
 
 /* Style the active/current link*/
 .header a.active {
@@ -71,9 +67,13 @@
 .table>colgroup+thead>tr:first-child>th, 
 .table>thead:first-child>tr:first-child>td, 
 .table>thead:first-child>tr:first-child>th{
-	background-color: #c6dfe7;
 	border:  1px solid #d9edf7;
 }
+.table thead tr:nth-child(2) td{
+  background-color: #c6dfe7;
+  border:  1px solid #d9edf7;
+}
+
 /*for color of modal '+' table */
 table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before, 
 table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control:before{
@@ -93,3 +93,10 @@ table.dataTable thead>tr>td.sorting{
     text-align: center;
 }
 
+.hidInput{
+  width: 100%;
+}
+.hide{
+  display: none;
+}
+/*<img src="https://i.imgur.com/zB5JRnV.jpeg" height="50" style="float: left;">*/
