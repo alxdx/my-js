@@ -99,4 +99,71 @@ table.dataTable thead>tr>td.sorting{
 .hide{
   display: none;
 }
+td.proceso{
+  font-weight: bold;
+  background-color: rgb(247, 162, 204) !important;
+}
+.aclaracion{
+  font-weight: bold;
+  background-color: #ffff87 !important;
+}
+.almacen{
+  font-weight: bold;
+  background-color: #bbff55 !important;
+}
+.cancelado{
+  font-weight: bold;
+  color: white;
+  background-color: black !important;
+}
+.cotizacion{
+  font-weight: bold;
+  background-color: rgb(247, 182, 63) !important;
+}
+.seta{
+  font-weight: bold;
+  background-color:skyblue !important;
+}
+
+
+.char-container {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.char-container a {
+  padding: 32px 8px 8px 8px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.char-container a:hover {
+  color: #f1f1f1;
+}
+
+.char-container .closebtn {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  font-size: 36px;
+  margin-right: 50px;
+}
+h3{
+  text-align: center;
+}
+#datachar{
+  padding-left: 15px;
+  padding-right: 10px;
+}
 /*<img src="https://i.imgur.com/zB5JRnV.jpeg" height="50" style="float: left;">*/
