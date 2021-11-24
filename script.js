@@ -391,7 +391,7 @@ $(document).ready(function(){
             },
             //fixedHeader:true, <---- Causa problemas con la grafica, es mejor desactivar.
             colReorder:{
-                order:[0,1,2,4,5,6,10,11,18,12,7,19,3,14,15,16,17,13,8,9],
+                order:[0,1,2,4,7,5,6,10,11,18,12,19,3,14,15,16,17,13,8,9],
                 realtime: false
             },
             language:{
