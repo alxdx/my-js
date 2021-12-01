@@ -84,17 +84,23 @@ var createMail = function(e,dt,node,config){
     let indexNumParte = dt.column('Número de Parte:name').index('visible');
     let indexCant = dt.column('Cant:name').index('visible');
     let indexDescripcion = dt.column('Descripción:name').index('visible');
+    let indexStatus = dt.column('Status:name').index('visible');
+    let indexSeginterno = dt.column('seguimientointerno:name').index('visible');
     let pieces = dt.rows({search:'applied'}).data().toArray();
     let piecesNotFound = [];
     pieces.forEach(elem => {
-        if(mails.hasOwnProperty(elem[indexProveedor])){
-            if(!vendorsFound.hasOwnProperty(elem[indexProveedor])){
-                vendorsFound[elem[indexProveedor]] = [];
-            } 
-            vendorsFound[elem[indexProveedor]].push(elem);
-        }
-        else{
-            piecesNotFound.push(elem);
+        if(elem[indexStatus] ==='Cotización' && !elem[indexSeginterno].includes('CKD')){
+            if(mails.hasOwnProperty(elem[indexProveedor])){
+                
+                    if(!vendorsFound.hasOwnProperty(elem[indexProveedor])){
+                        vendorsFound[elem[indexProveedor]] = [];
+                    } 
+                    vendorsFound[elem[indexProveedor]].push(elem);
+                
+            }
+            else{
+                piecesNotFound.push(elem);
+            }
         }
     });
     
@@ -355,6 +361,12 @@ $(document).ready(function(){
                     {
                         text:'Cotizar por correo',
                         action: createMail,
+                    },
+                    {
+                        text:'modal',
+                        action : ()=>{
+                            $('#mm').modal('show');
+                        }
                     }
             ],
             searching:true,
@@ -391,7 +403,7 @@ $(document).ready(function(){
             },
             //fixedHeader:true, <---- Causa problemas con la grafica, es mejor desactivar.
             colReorder:{
-                order:[0,1,2,4,7,5,6,10,11,18,12,19,3,14,15,16,17,13,8,9],
+                order:[0,1,2,4,7,5,6,10,11,18,12,19,3,14,15,16,17,13,8,9,20,21,22,23,24],
                 realtime: false
             },
             language:{
@@ -439,19 +451,18 @@ $(document).ready(function(){
                 }
                 let semaforo = numofDays =>{
                     if (numofDays==null) return '#eb8500'
-                    if (numofDays<30) return '#00c23d';
-                    else if (numofDays<60) return '#e6dd3e';
-                    else return '#ff0000';
+                    if (numofDays<30) return '#00a11b';
+                    else if (numofDays<60) return '#ffef14';
+                    else return '#ff1212';
                 } 
                 let [value,days] = CalculateTime(Date.parse(data[8].split("-")[0].split(' ')[0]),Date.now());
                 value==null? 
                     $('td', row).eq(18).text('¡Revisar Status!'):
                     $('td', row).eq(18).text(value);
                 $('td', row).eq(18).css({'font-weight': 'bold',
-                    'color': semaforo(days),
+                    'color':'black',
                     'text-align': 'center',
-                    'text-decoration': 'underline',
-                    'text-decoration-color': semaforo(days)});
+                    'background-color': semaforo(days)});
 
                 // build info for 'tiempo en proceso
                 let splt = data[12].split('/');
@@ -460,6 +471,8 @@ $(document).ready(function(){
                 value==null? 
                     $('td', row).eq(19).text('Sin info'):    
                     $('td', row).eq(19).text(value);
+                    $('td', row).eq(19).css({'text-align':'center'});
+                    $('td', row).eq(18).css({'text-align':'center'});
                 
             }
 	    });
@@ -487,6 +500,7 @@ $(document).ready(function(){
             });
     });
     // ---------- datachar instance -------------
+    $('#char').css({'overflow':'scroll'});
     const data = table.column(':contains(Status)').data().reduce(function (c, p) {
         c[p] = (c[p] || 0) + 1;
         return c;
@@ -500,6 +514,102 @@ $(document).ready(function(){
             datasets: [{
                 label: 'No. Piezas por Status',
                 data: Object.values(data),
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(0, 0, 0, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive:true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    $('#char').append("<h3>Piezas por Seguimiento</h3><canvas id='datachar2' height=140px width=200px></canvas>");
+    const ctx2 = $('#datachar2');
+    const data22 = table.column('seguimientointerno:name').data().reduce(function (c, p) {
+        if(p == 'Internacional CKD'){
+            p = 'InternCKD'
+        }else if(p.includes('Zamora')){
+            p = 'Y.Zamora'
+        }else if(p.includes('Chattanooga')){
+            p = 'Chattanooga'
+        }
+        else if(p.includes('Nacional')){
+            p = 'NacionalPreserie'
+        }
+        else if(p == 'Internacional RdM'){
+            p = 'InternRdM'
+        }
+        c[p] = (c[p] || 0) + 1;
+        return c;
+    }, {});
+    const data2 = Object.fromEntries(
+        Object.entries(data22).sort(([,a],[,b]) => b-a)
+    );
+    const labels2 = Object.keys(data2);
+    const myChart2 = new Chart(ctx2, {
+        type: 'pie',
+        data: {
+            labels: Object.keys(data2),
+            datasets: [{
+                label: 'No. Piezas por Seguimiento',
+                data: Object.values(data2),
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(0, 0, 0, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(249, 64, 255, 0.4)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(249, 64, 255, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            
+        }
+    });
+    $('#char').append("<h3>Piezas por Proyecto</h3><canvas id='datachar3' height=170px ></canvas>");
+    const ctx3 = $('#datachar3');
+    const data3 = table.column('Proyecto:name').data().reduce(function (c, p) {
+        p = p.replaceAll(' ','');
+        c[p] = (c[p] || 0) + 1;
+        return c;
+    }, {});
+    const labels3 = Object.keys(data3);
+    const myChart3 = new Chart(ctx3, {
+        type: 'bar',
+        data: {
+            labels: Object.keys(data3),
+            datasets: [{
+                label: 'No. Piezas por Proyecto',
+                data: Object.values(data3),
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',

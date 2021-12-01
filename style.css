@@ -135,8 +135,9 @@ td.proceso{
   right: 0;
   background-color: rgb(255, 255, 255);
   overflow-x: hidden;
+  overflow-y: scroll;
   transition: 0.5s;
-  padding-top: 60px;
+  padding-top: 40px;
 }
 
 .char-container a {
@@ -165,5 +166,14 @@ h3{
 #datachar{
   padding-left: 15px;
   padding-right: 10px;
+}
+#datachar3{
+  padding-left: 15px;
+  padding-right: 10px;
+}
+#datachar2{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
 }
 /*<img src="https://i.imgur.com/zB5JRnV.jpeg" height="50" style="float: left;">*/
