@@ -1,57 +1,57 @@
-var mails = {'chg': ["david.tirado@chg-meridian.com"],
-'flowsoft': ["ruben.martinez@flowsoft.com.mx"],
-'aisin': ["bjorn.schomann@awtce.de","manuel.clari@awtce.de","keiko.hakumura@aisin.co.jp","viktoria.meier@awtce.de","bjorn.schomann@awtce.de","masayuki.sato02@aisin.co.jp","shizuka.ito@aisin.co.jp","shota.araki@aisin.co.jp","tomomi.takemoto@aisin.co.jp"],
-'alpha': ["miguel.palestino@kk-alpha.com","mayra.perez@kk-alpha.com","isela.villagomez@kk-alpha.com"],
-'aptiv': ["luis.sesma@aptiv.com","luis.sesma@aptiv.com","anette.fischbach.vasentin@aptiv.com","alexander.suerig@aptiv.com","brigitte.alcantara@aptiv.com"],
-'awtce': ["torsten.strehlau@awtce.de","viktoria.meier@awtce.de","mark.jendryschik@awtce.de","manuel.clari@awtce.de","thierry.dupas@aweurope.be","shoji.fushimi@awtce.de"],
-'alpine': ["christina.politidou@alpine.de","christina.politidou@alpsalpine.com"],
-'bcs': ["hana.hudecova@bcs-ais.com","timo.seydel@bcs-ais.com","jost.budde@bcs-ais.com","andre.mix@bcs-ais.com"],
-'bcs automotive interface solutions': ["timo.seydel@bcs-ais.com"],
-'bcs méxico': ["felix.delgado@bcs-ais.com"],
-'bcs-ais': ["timo.seydel@bcs-ais.com"],
-'bhtc (behr- hella thermocontrol)': ["marc.mariani@bhtc.com","francisco.saavedra@bhtc.com ","victor.zamora@bhtc.com"],
-'bosch méxico': ["ana.nieto@mx.bosch.com","estefania.sanchez@mx.bosch.com","arturo.guillenlopez@mx.bosch.com"],
-'bosch': ["omar.castillejos@mx.bosch.com","pascal.volk@de.bosch.com","katrin.henkel@bosch.com","thomas.schmeiser@bosch.com","jasmin.egner@bosch.com","cinthia.cuan@mx.bosch.com"],
-'continental mexico': ["luis.saavedra-martinez@continental-corporation.com","marcel.bucksch@continental-corporation.com","marcel.bucksch@continental-corporation.com","martin.amparano@continental-corporation.com ","francisco.rojas@continental-corporation.com","ricardo.bricio@continental-corporation.com","abril.escobar@continental-corporation.com ","rainer.crome@continental.com","stefan.ellinger@continental-corporation.com","alexander.puchta@continental-corporation.com","daniel.beer@continental-corporation.com"],
-'continental automotive gmbh': ["thomas.koermer-ext@continental-corporation.com","tatjana.schreider@continental-corporation.com"],
-'ficosa adas s.l.u': ["dataprotection_spain@ficosa.com"],
-'ficosa': ["alexandre.rebollal@ficosa.com ","josep.juanmarti@ficosa.com","pascual.alvarez@ficosa.com","jaume.capdevila@ficosa.com","santiago.zapater@ficosa.com ","mantonia.claret@ficosa.com","susana.saavedra@ficosa.com","xavier.palacio@ficosa.com","kotaro.kobayashi@ficosa.com"],
-'ficosa north america': ["dataprotection_mexico@ficosa.com","dataprotection_mexico@ficosa.com"],
-'g2video': ["guillermo_lopez@g2video.net"],
-'grupo antolin silao - planta puebla': ["liz.perez@grupoantolin.com"],
-'hanon systems deutschland gmbh ': ["hgrunert@hanonsystems.com","rcezanne@hanonsystems.com"],
-'hella': ["eduardo.mayorga@hella.com"],
-'intevaproducts': ["fwiencke@intevaproducts.com","sfoley@intevaproducts.com"],
-'joynext': ["xaver.dziuba@joynext.com"],
-'ktb-mexico': ["v.gamboa@ktb-mexico.com"],
-'kostal': ["f.pupillo@kostal.com","u.yanez@kostal.com","ro.saucedo@kostal.com"],
-'kostal mexicana': ["ro.ramos@kostal.com","al.ramirez@kostal.com"],
-'lg': ["sukyoung.bang@lge.com - ya no esta en lg|"],
-'lg electronics deutschland gmbh': ["heamin.song@lge.com","fabienne.minier@lge.com","kyesoo.han@lge.com","kiwook.choi@lge.com","eunjung7.kim@lge.com"],
-'laird': ["uwe.gallhoff@lairdtech.com"],
-'magneti mareli': ["manuel.espana@marelli.com","manuel.espana@marelli.com"],
-'methode': ["mmontes@methode.com","gballesteros@methode.com","abrace@methode.com","kceleskey@methode.com"],
-'methode usa': ["roland.atallah@methodegermany.com","nramon@methode.com"],
-'preh': ["florian.dorst@preh.de","roberto.guerra@preh.mx","shaji.joy@preh.com"],
-'panasonic': ["edgar.tajonar@us.panasonic.com"],
-'plant puebla sas automotive systems': ["miguelangel.guzman@sas-automotive.com","selene.palalia@sas-automotive.com","dionisio.reyes@sas-automotive.com","luis.cervantes@sas-automotive.com","luis.ortiz@sas-automotive.com"],
-'sas /lg': ["gerardo.askins@sas-automotive.com","selene.palalia@sas-automotive.com"],
-'trw': ["zfservicesmexico@zf.com"],
-'vw / audi na group': ["karina.ayala@zf.com","karina.ayala@zf.com"],
-'valeo sistemas electronicos': ["maria-sanjuanita.lopez@valeo.com","norma.velazquez@valeo.com","roberto.vilchis.ext@valeo.com","alberto.murguia@valeo.com","karina.root@valeo.com","daniela.kuntze@valeo.com"],
-'varroc': ["vlsinfo@varroclighting.com","jtomanek@varroclighting.com","jbrezina@varroclighting.com","mkoudelk@varroclighting.com","bzmij@varroclighting.com"],
-'visteon': ["jcobos2@visteon.com"],
-'webasto': ["uwe.wefer@webasto.com"],
-'zf': ["ozan.sefedinoglou@zf.com"],
-'att': [" gm423p@att.com","cv321v@att.com"],
-'conexis': ["emir.ramirez@conexis.com.mx"],
-'mg2020': [" marco.gerardo@mg2020.com.mx"],
-'molex': ["nima.kiaeilochte@molex.com"],
-'ofi': ["jose.zepeda@ofi.com"],
-'prodigy': ["jc.rivera@prodigy.net.mx","lu.ramos@prodigy.net.mx"],
-'sonavox': ["andreas.lartz@sonavox.eu","sandra.langhof@sonavox.eu"],
-'tkpos': [" dponce@tkpos.com"],
-'visteon': ["antonio.hernandez@visteon.com","mhernan5@visteon.com","fboarini@visteon.com"]}
+var mails = {'chg': ['david.tirado@chg-meridian.com'],
+'flowsoft': ['ruben.martinez@flowsoft.com.mx'],
+'aisin': ['bjorn.schomann@awtce.de','manuel.clari@awtce.de','keiko.hakumura@aisin.co.jp','viktoria.meier@awtce.de','bjorn.schomann@awtce.de','masayuki.sato02@aisin.co.jp','shizuka.ito@aisin.co.jp','shota.araki@aisin.co.jp','tomomi.takemoto@aisin.co.jp'],
+'alpha': ['miguel.palestino@kk-alpha.com','mayra.perez@kk-alpha.com','isela.villagomez@kk-alpha.com'],
+'aptiv': ['luis.sesma@aptiv.com','luis.sesma@aptiv.com','anette.fischbach.vasentin@aptiv.com','alexander.suerig@aptiv.com','brigitte.alcantara@aptiv.com'],
+'awtce': ['torsten.strehlau@awtce.de','viktoria.meier@awtce.de','mark.jendryschik@awtce.de','manuel.clari@awtce.de','thierry.dupas@aweurope.be','shoji.fushimi@awtce.de'],
+'alpine': ['christina.politidou@alpine.de','christina.politidou@alpsalpine.com'],
+'bcs': ['hana.hudecova@bcs-ais.com','timo.seydel@bcs-ais.com','jost.budde@bcs-ais.com','andre.mix@bcs-ais.com'],
+'bcs automotive interface solutions': ['timo.seydel@bcs-ais.com'],
+'bcs méxico': ['felix.delgado@bcs-ais.com'],
+'bcs-ais': ['timo.seydel@bcs-ais.com'],
+'bhtc (behr- hella thermocontrol)': ['marc.mariani@bhtc.com','francisco.saavedra@bhtc.com ','victor.zamora@bhtc.com'],
+'bosch méxico': ['ana.nieto@mx.bosch.com','estefania.sanchez@mx.bosch.com','arturo.guillenlopez@mx.bosch.com'],
+'bosch': ['omar.castillejos@mx.bosch.com','pascal.volk@de.bosch.com','katrin.henkel@bosch.com','thomas.schmeiser@bosch.com','jasmin.egner@bosch.com','cinthia.cuan@mx.bosch.com'],
+'continental mexico': ['luis.saavedra-martinez@continental-corporation.com','marcel.bucksch@continental-corporation.com','marcel.bucksch@continental-corporation.com','martin.amparano@continental-corporation.com ','francisco.rojas@continental-corporation.com','ricardo.bricio@continental-corporation.com','abril.escobar@continental-corporation.com ','rainer.crome@continental.com','stefan.ellinger@continental-corporation.com','alexander.puchta@continental-corporation.com','daniel.beer@continental-corporation.com'],
+'continental automotive gmbh': ['thomas.koermer-ext@continental-corporation.com','tatjana.schreider@continental-corporation.com'],
+'ficosa adas s.l.u': ['dataprotection_spain@ficosa.com'],
+'ficosa': ['alexandre.rebollal@ficosa.com ','josep.juanmarti@ficosa.com','pascual.alvarez@ficosa.com','jaume.capdevila@ficosa.com','santiago.zapater@ficosa.com ','mantonia.claret@ficosa.com','susana.saavedra@ficosa.com','xavier.palacio@ficosa.com','kotaro.kobayashi@ficosa.com'],
+'ficosa north america': ['dataprotection_mexico@ficosa.com','dataprotection_mexico@ficosa.com'],
+'g2video': ['guillermo_lopez@g2video.net'],
+'grupo antolin silao - planta puebla': ['liz.perez@grupoantolin.com'],
+'hanon systems deutschland gmbh ': ['hgrunert@hanonsystems.com','rcezanne@hanonsystems.com'],
+'hella': ['eduardo.mayorga@hella.com'],
+'intevaproducts': ['fwiencke@intevaproducts.com','sfoley@intevaproducts.com'],
+'joynext': ['xaver.dziuba@joynext.com'],
+'ktb-mexico': ['v.gamboa@ktb-mexico.com'],
+'kostal': ['f.pupillo@kostal.com','u.yanez@kostal.com','ro.saucedo@kostal.com'],
+'kostal mexicana': ['ro.ramos@kostal.com','al.ramirez@kostal.com'],
+'lg': ['sukyoung.bang@lge.com - ya no esta en lg|'],
+'lg electronics deutschland gmbh': ['heamin.song@lge.com','fabienne.minier@lge.com','kyesoo.han@lge.com','kiwook.choi@lge.com','eunjung7.kim@lge.com'],
+'laird': ['uwe.gallhoff@lairdtech.com'],
+'magneti mareli': ['manuel.espana@marelli.com','manuel.espana@marelli.com'],
+'methode': ['mmontes@methode.com','gballesteros@methode.com','abrace@methode.com','kceleskey@methode.com'],
+'methode usa': ['roland.atallah@methodegermany.com','nramon@methode.com'],
+'preh': ['florian.dorst@preh.de','roberto.guerra@preh.mx','shaji.joy@preh.com'],
+'panasonic': ['edgar.tajonar@us.panasonic.com'],
+'plant puebla sas automotive systems': ['miguelangel.guzman@sas-automotive.com','selene.palalia@sas-automotive.com','dionisio.reyes@sas-automotive.com','luis.cervantes@sas-automotive.com','luis.ortiz@sas-automotive.com'],
+'sas /lg': ['gerardo.askins@sas-automotive.com','selene.palalia@sas-automotive.com'],
+'trw': ['zfservicesmexico@zf.com'],
+'vw / audi na group': ['karina.ayala@zf.com','karina.ayala@zf.com'],
+'valeo sistemas electronicos': ['maria-sanjuanita.lopez@valeo.com','norma.velazquez@valeo.com','roberto.vilchis.ext@valeo.com','alberto.murguia@valeo.com','karina.root@valeo.com','daniela.kuntze@valeo.com'],
+'varroc': ['vlsinfo@varroclighting.com','jtomanek@varroclighting.com','jbrezina@varroclighting.com','mkoudelk@varroclighting.com','bzmij@varroclighting.com'],
+'visteon': ['jcobos2@visteon.com'],
+'webasto': ['uwe.wefer@webasto.com'],
+'zf': ['ozan.sefedinoglou@zf.com'],
+'att': [' gm423p@att.com','cv321v@att.com'],
+'conexis': ['emir.ramirez@conexis.com.mx'],
+'mg2020': [' marco.gerardo@mg2020.com.mx'],
+'molex': ['nima.kiaeilochte@molex.com'],
+'ofi': ['jose.zepeda@ofi.com'],
+'prodigy': ['jc.rivera@prodigy.net.mx','lu.ramos@prodigy.net.mx'],
+'sonavox': ['andreas.lartz@sonavox.eu','sandra.langhof@sonavox.eu'],
+'tkpos': [' dponce@tkpos.com'],
+'visteon': ['antonio.hernandez@visteon.com','mhernan5@visteon.com','fboarini@visteon.com']}
 
 //Para mapear a clases
 class_status = {
@@ -109,7 +109,7 @@ var createMail = function(e,dt,node,config){
     if (piecesNotFound.length > 0){
         piecesNotFound.forEach(elem => {
             let found = false;
-            elem[indexProveedor].toLowerCase().replaceAll('/'," ").split(' ').forEach(word => {
+            elem[indexProveedor].toLowerCase().replaceAll('/',' ').split(' ').forEach(word => {
                 let w = word.replaceAll(' ','').replaceAll('(','').replaceAll(')','');
                 if (mails.hasOwnProperty(w)){
                     if(!vendorsFound.hasOwnProperty(w)){
@@ -125,7 +125,7 @@ var createMail = function(e,dt,node,config){
         });
     }
     if (needToBeCheckByUser.length > 0){
-        alert("No se pudo encontrar un proveedor para las siguientes "+ needToBeCheckByUser.length +" piezas:"+ needToBeCheckByUser.reduce((acc,curr)=>{
+        alert('No se pudo encontrar un proveedor para las siguientes '+ needToBeCheckByUser.length +' piezas:'+ needToBeCheckByUser.reduce((acc,curr)=>{
             acc += '\n'+ curr[indexProveedor] +' --- '+ curr[indexNumParte];
             return acc;
         },''));
@@ -274,7 +274,7 @@ var createMail = function(e,dt,node,config){
         a.href = encodedUri;
         a.id = 'fileLink'+nombreProveedor;
         a.download = 'Cotizacion-'+$('.header a strong').text()+'-'+date+'-'+nombreProveedor+'.eml';
-        a.style = "display:none;"; //hidden link
+        a.style = 'display:none;'; //hidden link
         document.body.appendChild(a);
         document.getElementById('fileLink'+nombreProveedor).click(); //click the link
     }
@@ -362,12 +362,12 @@ $(document).ready(function(){
                         text:'Cotizar por correo',
                         action: createMail,
                     },
-                    {
-                        text:'modal',
-                        action : ()=>{
-                            $('#mm').modal('show');
-                        }
-                    }
+                    //{
+                    //    text:'modal',
+                    //    action : ()=>{
+                    //        $('#mm').modal('show');
+                    //    }
+                    //}
             ],
             searching:true,
             paging:true,
@@ -381,7 +381,7 @@ $(document).ready(function(){
                         header: function ( row ) {
                             var data = row.data();
                             var api = $('#datatable').dataTable().api();
-                            return '#'+data[api.column("#:name").index()] + ' Status <strong> '+data[4]+'</strong>';
+                            return '#'+data[api.column('#:name').index()] + ' Status <strong> '+data[4]+'</strong>';
                         }
                     } ),
                     renderer: (api,rowIdx,columns)=>{
@@ -402,30 +402,27 @@ $(document).ready(function(){
                 }
             },
             //fixedHeader:true, <---- Causa problemas con la grafica, es mejor desactivar.
-            colReorder:{
-                order:[0,1,2,4,7,5,6,10,11,18,12,19,3,14,15,16,17,13,8,9,20,21,22,23,24],
-                realtime: false
-            },
             language:{
-                search:"Buscar en toda la tabla:",
+                search:'Buscar en toda la tabla:',
                 paginate:{
-                    "previous":"Anterior",
-                    "next":"Siguiente"
+                    'previous':'Anterior',
+                    'next':'Siguiente'
                 },
                 buttons:{
-                    "copy":"Copiar datos actuales",
-                    "print":"Imprimir datos actuales",
-                    "pdf":"Exportar datos actuales a PDF",
-                    "excel":"Exportar datos actuales a excel"
+                    'copy':'Copiar datos actuales',
+                    'print':'Imprimir datos actuales',
+                    'pdf':'Exportar datos actuales a PDF',
+                    'excel':'Exportar datos actuales a excel'
                 },
-                "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
-                "infoFiltered": "(Filtrado de _MAX_ registros)",
-                "infoEmpty": "Mostrando 0 a 0 de 0 registros",
-                "zeroRecords": "No se encontraron coincidencias"
+                'info': 'Mostrando _START_ a _END_ de _TOTAL_ registros',
+                'infoFiltered': '(Filtrado de _MAX_ registros)',
+                'infoEmpty': 'Mostrando 0 a 0 de 0 registros',
+                'zeroRecords': 'No se encontraron coincidencias'
             },
             //listener when a new row is created
             createdRow: function (row,data,index){//it considers the original html data order
-                $('td', row).eq(7).addClass(class_status[data[7]]);
+                var num = 7 //api.column('status:name').index();
+                $('td', row).eq(num).addClass(class_status[data[num]]);
                 //build the info over 'actualizado hace' column
                 var CalculateTime = (startDate, endDate) => {
                     let timePassed = endDate - startDate;
@@ -455,7 +452,7 @@ $(document).ready(function(){
                     else if (numofDays<60) return '#ffef14';
                     else return '#ff1212';
                 } 
-                let [value,days] = CalculateTime(Date.parse(data[8].split("-")[0].split(' ')[0]),Date.now());
+                let [value,days] = CalculateTime(Date.parse(data[8].split('-')[0].split(' ')[0]),Date.now());
                 value==null? 
                     $('td', row).eq(18).text('¡Revisar Status!'):
                     $('td', row).eq(18).text(value);
@@ -481,9 +478,38 @@ $(document).ready(function(){
     new $.fn.dataTable.RowGroup( table );
     table.rowGroup().enable(false);
     table.rowGroup().dataSrc([0]).draw();
+    //[0,1,2,4,7,5,6,10,11,18,12,19,3,14,15,16,17,13,8,9]
+    var api = $('#datatable').dataTable().api();
+    var oo = [
+                    api.column('#:name').index(),
+                    api.column('Proyecto:name').index(),
+                    api.column('SOP/MP:name').index(),
+                    api.column('Numero de Parte:name').index(),
+                    api.column('Status:name').index(),
+                    api.column('Descripcion:name').index(),
+                    api.column('Cant:name').index(),
+                    api.column('Proveedor:name').index(),
+                    api.column('seguimientointerno:name').index(),
+                    api.column('actualizado hace:name').index(),
+                    api.column('fechasolicitud:name').index(),
+                    api.column('tiempoproceso:name').index(),
+                    api.column('Consecutivo:name').index(),
+                    api.column('ETA:name').index(),
+                    api.column('No. Lote:name').index(),
+                    api.column('No. Folio Almacen:name').index(),
+                    api.column('Fecha Llegada Almacen:name').index(),
+                    api.column('Dead Line:name').index(),
+                    api.column('Detalle de status:name').index(),
+                    api.column('Status anterior:name').index()
+            ]
+    console.log(oo);
+    new $.fn.dataTable.ColReorder( table, {
+        order: oo,
+        realtime: false
+    });
     
     // listener para buscar el texto sobre los texts de los headers
-    $("#datatable thead td input").on( 'keyup change', function () {
+    $('#datatable thead td input').on( 'keyup change', function () {
         table.column( $(this).parent().index()+':visible' ).search( this.value ).draw();
     } );
     // listener para modificar el header principal de la tabla al hacer resizing
@@ -542,7 +568,7 @@ $(document).ready(function(){
             }
         }
     });
-    $('#char').append("<h3>Piezas por Seguimiento</h3><canvas id='datachar2' height=140px width=200px></canvas>");
+    $('#char').append('<h3>Piezas por Seguimiento</h3><canvas id="datachar2" height=140px width=200px></canvas>');
     const ctx2 = $('#datachar2');
     const data22 = table.column('seguimientointerno:name').data().reduce(function (c, p) {
         if(p == 'Internacional CKD'){
@@ -595,7 +621,7 @@ $(document).ready(function(){
             
         }
     });
-    $('#char').append("<h3>Piezas por Proyecto</h3><canvas id='datachar3' height=170px ></canvas>");
+    $('#char').append('<h3>Piezas por Proyecto</h3><canvas id="datachar3" height=170px ></canvas>');
     const ctx3 = $('#datachar3');
     const data3 = table.column('Proyecto:name').data().reduce(function (c, p) {
         p = p.replaceAll(' ','');
@@ -637,12 +663,12 @@ $(document).ready(function(){
             }
         }
     });
-    $("#closechar").on('click',function() {
-        $("#char").css("width","0");
-        $("#table").css("marginRight","0");
+    $('#closechar').on('click',function() {
+        $('#char').css('width','0');
+        $('#table').css('marginRight','0');
     });
-    $("#header_informe").on('click',function() {
-        $("#char").css("width","500px");
-        $("#table").css("marginRight", "500px");
+    $('#header_informe').on('click',function() {
+        $('#char').css('width','500px');
+        $('#table').css('marginRight', '500px');
     });
 });
